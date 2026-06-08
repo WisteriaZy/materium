@@ -1,9 +1,9 @@
 name: Build and publish nightly release
 
-on:
+于:
   workflow_dispatch:
   push:
-    branches:
+    分支:
       - main
 
 permissions:
@@ -41,9 +41,6 @@ jobs:
       - name: Get Pub dependencies
         run: flutter pub get
 
-      - name: Build debug APK
-        run: flutter build apk --debug
-
       - name: Build release APKs
         run: flutter build apk --release --split-per-abi
 
@@ -62,6 +59,6 @@ jobs:
           draft: false
           prerelease: true
           make_latest: false
-          files: |
+          文件: |
             build/app/outputs/flutter-apk/*.apk
             build/app/outputs/flutter-apk/*.apk.sha1
