@@ -1,9 +1,9 @@
 name: Build and publish nightly release
 
-于:
+on:
   workflow_dispatch:
   push:
-    分支:
+    branches:
       - main
 
 permissions:
@@ -59,6 +59,6 @@ jobs:
           draft: false
           prerelease: true
           make_latest: false
-          文件: |
+          files: |
             build/app/outputs/flutter-apk/*.apk
             build/app/outputs/flutter-apk/*.apk.sha1
